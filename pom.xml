@@ -1,0 +1,67 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.cleo.labs</groupId>
+  <artifactId>cidr-pattern</artifactId>
+  <version>1.0.0</version>
+  <name>cidr-pattern</name>
+
+  <description>Generate regular expression pattern from a CIDR expression</description>
+
+  <scm>
+    <url>https://github.com/cleo/cidr-pattercidr-pattern</url>
+    <connection>scm:git:https://github.com/cleo/cidr-pattern.git</connection>
+    <developerConnection>scm:git:https://github.com/cleo/cidr-pattern.git</developerConnection>
+  </scm>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.version>1.8</java.version>
+    <junit.version>4.13.2</junit.version>
+  </properties>
+
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <name>GitHub Cleo Apache Maven Packages</name>
+      <url>https://maven.pkg.github.com/cleo/cidr-pattern</url>
+    </repository>
+  </distributionManagement>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.1</version>
+        <configuration>
+          <source>${java.version}</source>
+          <target>${java.version}</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>2.5</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <mainClass>com.cleo.labs.cidr.Explore</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
