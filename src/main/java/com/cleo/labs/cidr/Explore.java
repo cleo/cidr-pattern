@@ -60,7 +60,7 @@ public class Explore {
             } else {
                 System.out.println("match ["+command+"] failed");
             }
-        } else {
+        } else if (verb.length()>0) {
             usage(System.out);
         }
     }

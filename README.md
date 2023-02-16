@@ -17,8 +17,13 @@ public static Pattern compile(String cidrs, int flags) throws PatternSyntaxExcep
 public static boolean matches(String cidrs, CharSequence input) throws PatternSyntaxException;
 ```
 
-The `cidrs` input is a comma-separated list of CIDR or wildcard IPv4 expressions of the form
-_IP-Address_`/`_bits_, or just _IP-Address_, where
+The `cidrs` input is a comma-separated list of CIDR, wildcard or address range IPv4 expressions of the form:
+
+* _IP-Address_`/`_bits_
+* _IP-Address_`-`_IP-Address_
+* _IP-Address_
+
+where
 
 * _IP-Address_ is betwen one and four integers 0-255 (or `*`) separated by `.` and
 * _bits_ is a number between 1 and 32 (defaulting to 32 if `/`_bits_ is omitted)
@@ -27,6 +32,7 @@ The following are valid CIDR patterns:
 
 * `10/8,172.16/12,192.168/16` describes the [RFC 1918](https://datatracker.ietf.org/doc/html/rfc1918) private address space.
 * `10/24` and `10.0.0.*` describe the same set of addresses starting with `10.0.0.`.
+* `10.0.0.0-10.0.0.255` also describes the same set of addresses starting with `10.0.0`.
 * `142.250.72.196` matches a single IP Address.
     
 
