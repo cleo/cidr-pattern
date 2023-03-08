@@ -10,7 +10,7 @@
   <description>Generate regular expression pattern from a CIDR expression</description>
 
   <scm>
-    <url>https://github.com/cleo/cidr-pattercidr-pattern</url>
+    <url>https://github.com/cleo/cidr-pattern</url>
     <connection>scm:git:https://github.com/cleo/cidr-pattern.git</connection>
     <developerConnection>scm:git:https://github.com/cleo/cidr-pattern.git</developerConnection>
   </scm>
